@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+        
+	<!-- 扫描 Spring 的注解 -->
+	<!-- base-package 设置扫描范围 -->
+	<context:component-scan base-package="com.mapeak.smis.controller" />
+	
+	<!-- 配置新的 HandlerMapping 和 HandlerAdapter -->
+	<mvc:annotation-driven></mvc:annotation-driven>
+	
+	<!-- 视图解析器 -->
+	<!-- 配置视图 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 前缀访问路径 -->
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<!-- 后缀访问路径 -->
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+</beans>
